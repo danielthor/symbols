@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <title>Symbols</title>
+
+  <link rel="stylesheet" href="css/base.css" />
+</head>
+<body>
+  <div id="symbols-list">
+    
+    Search: <input class="search" />
+
+    <ul class="list">
+      <li> <span class="description">Apple</span></li>
+      <li>♩ <span class="description">Music note 1</span></li>
+      <li>♪ <span class="description">Music note 2</span></li>
+      <li>♫ <span class="description">Music note 3</span></li>
+      <li>♬ <span class="description">Music note 4</span></li>
+      <li>❤ <span class="description">Heart 1</span></li>
+      <li>♡ <span class="description">Heart 2</span></li>
+      <li>★ <span class="description">Star 1</span></li>
+      <li>☆ <span class="description">Star 2</span></li>
+      <li>♠ <span class="description">Spades</span></li>
+      <li>♣ <span class="description">Clubs</span></li>
+      <li>♦ <span class="description">Diamonds</span></li>
+      <li>← <span class="description">Left arrow</span></li>
+      <li>→ <span class="description">Right arrow</span></li>
+      <li>↑ <span class="description">Up arrow</span></li>
+      <li>↓ <span class="description">Down arrow</span></li>
+    </ul>
+  </div>
+
+  <p class="byline">By <a href="http://twitter.com/dth" title="@dth's Twitter profile">@dth</a>.</p>
+
+  <!-- Search powered by List.js by @javve https://github.com/javve/list -->
+  <script src="js/list.min.js"></script>
+  <script>
+    var options = {
+        valueNames: ['description']
+    };
+
+    var symbolsList = new List('symbols-list', options);
+  </script>
+</body>
+</html>
