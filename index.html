@@ -1,46 +1,69 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
   <meta charset='utf-8'>
   <title>Symbols</title>
-
-  <link rel="stylesheet" href="css/base.css" />
+  <!-- Bootstrap -->
+  <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
 </head>
 <body>
-  <div id="symbols-list">
-    
-    Search: <input class="search" />
-
-    <ul class="list">
-      <li> <span class="description">Apple</span></li>
-      <li>♩ <span class="description">Music note 1</span></li>
-      <li>♪ <span class="description">Music note 2</span></li>
-      <li>♫ <span class="description">Music note 3</span></li>
-      <li>♬ <span class="description">Music note 4</span></li>
-      <li>❤ <span class="description">Heart 1</span></li>
-      <li>♡ <span class="description">Heart 2</span></li>
-      <li>★ <span class="description">Star 1</span></li>
-      <li>☆ <span class="description">Star 2</span></li>
-      <li>♠ <span class="description">Spades</span></li>
-      <li>♣ <span class="description">Clubs</span></li>
-      <li>♦ <span class="description">Diamonds</span></li>
-      <li>← <span class="description">Left arrow</span></li>
-      <li>→ <span class="description">Right arrow</span></li>
-      <li>↑ <span class="description">Up arrow</span></li>
-      <li>↓ <span class="description">Down arrow</span></li>
-    </ul>
+  <div class="navbar">
+    <div class="navbar-inner">
+      <a class="brand" href="#">Symbols</a>
+      <ul class="nav">
+        <li><a href="#about">About</a></li>
+      </ul>
+    </div>
   </div>
 
-  <p class="byline">By <a href="http://twitter.com/dth" title="@dth's Twitter profile">@dth</a>.</p>
+  <div class="span12">
+    
+    <div id="symbols-list">
+      <p><input class="search" placeholder="Filter..." /></p>
+      <ul class="list unstyled">
+        <li id="symbols-item">
+          <span class="symbol"></span>
+          <span class="tags" style="display:none;"></span>
+        </li>
+      </ul>
+    </div>
+
+
+    <a name="about" ></a>
+    <p class="byline">Created and maintained by <a href="http://twitter.com/dth" title="@dth's Twitter profile">@dth</a>, code available on <a href="https://github.com/danielthor/symbols" title="Symbols project on GitHub">GitHub</a>.</p>
+
+  </div>
+
+  <!-- Bootstrap -->
+  <script src="js/bootstrap.min.js"></script>
 
   <!-- Search powered by List.js by @javve https://github.com/javve/list -->
   <script src="js/list.min.js"></script>
   <script>
     var options = {
-        valueNames: ['description']
+        item: 'symbols-item'
     };
 
-    var symbolsList = new List('symbols-list', options);
+    var values = [
+        { symbol: '', tags:'apple' }
+        , { symbol: '♩', tags:'note' }
+        , { symbol: '♪', tags:'note' }
+        , { symbol: '♫', tags:'note' }
+        , { symbol: '♬', tags:'note' }
+        , { symbol: '♡', tags:'heart' }
+        , { symbol: '★', tags:'star' }
+        , { symbol: '☆', tags:'star' }
+        , { symbol: '❤', tags:'cards heart' }
+        , { symbol: '♠', tags:'cards spades' }
+        , { symbol: '♣', tags:'cards clubs' }
+        , { symbol: '♦', tags:'cards diamonds' }
+        , { symbol: '←', tags:'arrow left' }
+        , { symbol: '→', tags:'arrow right' }
+        , { symbol: '↑', tags:'arrow up' }
+        , { symbol: '↓', tags:'arrow down' }
+    ];
+
+    var symbolsList = new List('symbols-list', options, values);
   </script>
 </body>
 </html>
